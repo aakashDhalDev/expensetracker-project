@@ -4,6 +4,7 @@ import com.oggy.expensetrackerapi.entity.Expense;
 import com.oggy.expensetrackerapi.service.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -17,5 +18,10 @@ public class ExpenseController {
     @GetMapping("/expenses")
     public List<Expense> getAllExpenses(){
         return expenseService.getAllExpenses();
+    }
+
+    @GetMapping("/expensesById")
+    public Expense getExpenseById(@RequestParam("expense-id") Long id){
+        return expenseService.getExpenseById(id);
     }
 }
