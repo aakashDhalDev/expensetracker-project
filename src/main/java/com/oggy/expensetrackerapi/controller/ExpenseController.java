@@ -3,6 +3,7 @@ package com.oggy.expensetrackerapi.controller;
 import com.oggy.expensetrackerapi.entity.Expense;
 import com.oggy.expensetrackerapi.service.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,4 +25,10 @@ public class ExpenseController {
     public Expense getExpenseById(@RequestParam("expense-id") Long id){
         return expenseService.getExpenseById(id);
     }
+
+    @DeleteMapping("/expenses")
+    public void deleteExpenseById(@RequestParam Long id){
+        expenseService.deleteExpenseById(id);
+    }
+
 }
