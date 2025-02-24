@@ -1,12 +1,14 @@
 package com.oggy.expensetrackerapi.service;
 
 import com.oggy.expensetrackerapi.entity.Expense;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface ExpenseService  {
-    List<Expense> getAllExpenses();
+    Page<Expense> getAllExpenses(Pageable page);
 
     Expense getExpenseById(Long id);
 
