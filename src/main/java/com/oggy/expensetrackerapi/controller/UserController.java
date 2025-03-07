@@ -22,7 +22,7 @@ public class UserController {
 
     @GetMapping("/users/{id}")
     public ResponseEntity<User> readUser(@PathVariable Long id){
-        return new ResponseEntity<User>(userService.readUser(id), HttpStatus.OK);
+        return new ResponseEntity<User>(userService .readUser(id), HttpStatus.OK);
     }
 
     @PutMapping("/users/{id}")
